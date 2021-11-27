@@ -4,6 +4,16 @@
 
 Desenvolver uma solução em formato de API com a utilização de node.js e Typescript.
 
+<Solução do Marco Martins>
+Foi utilizado EJS para renderização do HTML. Irá funcionar com $npm install ejs
+Após o $ npm run dev, testar a URLS com os tipos de conta, tipos de transação e quantias a sacar ou depositar.
+Exemplos:
+http://localhost:5000/saque/cc/400 (Saque de B$ 400 na conta corrente)
+http://localhost:5000/deposito/poup/1000 (Depósito de B$ 1000 na poupança)
+
+Tipos de Transação: saque ou deposito
+Tipos de conta: poup ou cc
+
 ### Como realizar
 
 Faça o fork do repositório, realize os seus commits e ao final envie o link do seu repositório para o e-mail rh@moovin.com.br. Este repositório já possui uma base para iniciar o desenvolvimento, utilize-a como achar necessário. 
