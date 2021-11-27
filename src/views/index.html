@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <h2>Terminal Bancário</h2>
+        <h4>Saldo inicial na <%= tipoConta %>: B$ <%= saldo.toFixed(2) %></></h4>
+        <div class="info">
+            <% if(tipo == 1){ %>
+                <h4>Depósito requisitado: B$ <%= parseInt(quantia).toFixed(2) %></></h4>
+            <% } else { %>
+                <h4>Saque requisitado: B$ <%= parseInt(quantia).toFixed(2) %></></h4>
+            <% } %>
+            <h4>Mensagem:</h4>
+            <% if(tipo == 2){ %>            
+                <% if(quantia > 600){ %>
+                    <p class="erro">O limite do saque é B$ 600,00. Operação não efetuada!</p>
+                <% } else if(quantia > saldo) { %> 
+                    O saque requisitado é maior do que o saldo!  Operação não efetuada!
+                <% } else { %>
+                    Operação bem sucedida!<br>
+                    É cobrada uma taxa de B$ 0.30 por operação.
+                    O saldo final, com a taxa, fica em: B$ <%= (saldo - quantia - 0.30).toFixed(2) %>
+                <% } %> 
+            <% } else { %>
+                Operação bem sucedida!<br>
+                O saldo final com o depósito fica em: B$ <%= (saldo + parseInt(quantia)).toFixed(2) %>
+            <% } %>        
+        </div>
+    </body>
+</html>
